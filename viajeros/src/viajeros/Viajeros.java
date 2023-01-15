@@ -35,16 +35,6 @@ public class Viajeros {
 		
 	}
 
-	public void controlDeErrores() {
-		int numDNI = Integer.parseInt(this.DNI.substring(0, 8));
-		String letraDNI = this.DNI.substring(8);
-		letraDNI.toUpperCase();
-		
-		if (letraDNI == "I"||letraDNI == "O"||letraDNI == "U"|| letraDNI == "Ñ") {
-			System.err.println("La letra del DNI es incorrecta");
-			return;
-		}
-	}
 	public int getId() {return id;}
 	public int getContador(){return contador;}
 	public String getNombre() {return this.Nombre;}

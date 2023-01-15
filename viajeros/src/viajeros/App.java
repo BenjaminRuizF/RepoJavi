@@ -4,7 +4,7 @@ public class App {
 
 	public static void main(String[] args) {
 		Viajeros V1 = new Viajeros();
-		Viajeros V2 = new Viajeros("12345678U","Pepe", "Castillo Galan", "Español", "Camino de la muerte Nº666");
+		Viajeros V2 = new Viajeros("12345678I","Pepe", "Castillo Galan", "Español", "Camino de la muerte Nº666");
 		Viajeros V3 = new Viajeros();
 		/*System.out.println(V2.getDNI());
 		System.out.println(V2.getNombre());
@@ -18,6 +18,7 @@ public class App {
 		V1.setNacionalidad("Flaquitolandia");
 		V1.setDireccion("West Cementerio");
 		
+
 		/*System.out.println(V1.getDNI());
 		System.out.println(V1.getNombre());
 		System.out.println(V1.getApellidos());
