@@ -1,6 +1,10 @@
 package cuenta;
 
 public class Cuenta {
+	public final char SEXOF = 'M';
+	public final char SEXOM = 'H';
+	
+	private char sexo;
 	private String nombreCliente;
 	private String numeroCuenta;
 	private double tipoInteres;
@@ -12,6 +16,7 @@ public class Cuenta {
 		numeroCuenta = "0000000000";
 		tipoInteres = 0.00;
 		saldo = 0.00;
+		sexo = SEXOM;
 
 	}
 
@@ -70,7 +75,7 @@ public class Cuenta {
 		}
 	}
 
-	public boolean ingreso(double ingresos) {
+	public boolean ingresar(double ingresos) {
 		if (ingresos < 0) {
 			System.err.println("No puedes ingresar en negativo");
 			return false;
@@ -90,11 +95,13 @@ public class Cuenta {
 		return true;
 	}
 
-	/*public void transferencia(double transferencia) {
-		if (transferencia > ) {
-			System.err.println("No hay suficiente saldo para hacer la transferencia");
+	public boolean transferencia(Cuenta C, double transferencia) {
+		if (this.saldo>=transferencia && saldo >=0) {
+			this.saldo-=transferencia;
+			C.ingresar(transferencia);
+			return true;
 		}
-	
-		System.out.println("Saldo actualizado");
-	}*/
+		return false;
+		}
+		
 }
