@@ -3,12 +3,14 @@ package perros;
 public class App {
 
 	public static void main(String[] args) {
-		perros P1 = new perros();
-		perros P2 = new perros("Pablo", "Pitbull", 5, "Blanco");
-		P1.setNombre("Carlos");
-		P1.setRaza("Caniche");
-		P1.setEdad(1);
-		P1.setColor("Negro");
+		Reala R1 = new Reala();
+		perros P1 = new perros("Pablo","Cockers",4,"negro");
+		R1.aniadirPerro(new perros ("Carlos","Cocker",3,"Blanco"));
+		R1.mostrarPerros();
+		R1.aniadirPerro(P1);
+		R1.mostrarPerros();
+		R1.sacarPerros(1);
+		R1.mostrarPerros();
 	}
 
 }
