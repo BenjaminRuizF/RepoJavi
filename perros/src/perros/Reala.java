@@ -16,6 +16,7 @@ public class Reala {
 		if (array == null) {
 			array = new perros[1];
 			array[0] = P;
+			return;
 		} else {
 			perros[] aux = new perros[array.length + 1];
 			System.arraycopy(array, 0, aux, 0, array.length);
