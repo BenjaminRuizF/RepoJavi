@@ -6,31 +6,16 @@ public class App {
 
 	public static void main(String[] args) {
 		Agenda A1 = new Agenda();
-		Contacto C1 = new Contacto("Anuel", "657756576");
+		Contacto C1 = new Contacto("Pedro", "657756576");
 		Contacto C2 = new Contacto("Ferxxo", "689986869");
 		Contacto C3 = new Contacto("Mora", "623326236");
 		Contacto C4 = new Contacto("Quepedo", "615516156");
-		switch (mostrarMenu()) {
-
-		case 1:
-			AniadirContacto();
-			break;
-		case 2:
-			Pescaderia();
-			break;
-		case 3:
-			Fruteria();
-			break;
-		case 4:
-			Drogueria();
-			break;
-		case 5:
-			
-		default:
-			System.out.println("La seccion seleccionada esta en reformas");
-		}
 		
+		switch(mostrarMenu()) {
+		
+		}
 	}
+	
 	public static int mostrarMenu() {
 		int menu;
 		Scanner teclado = new Scanner(System.in);
