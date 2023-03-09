@@ -1,11 +1,12 @@
 package electrodomesticos;
 
 public class Electrodomesticos {
-	private final int PRECIOBASE = 100;
+	private final double PRECIOBASE = 100;
 	private final int PESO = 5;
 	private final char CONSUMO = 'F';
 	private final String COLOR = "blanco";
-	private int precioBase;
+	private double precioBase;
+	private double precio;
 	private int peso;
 	private char consumo;
 	private String color;
@@ -18,21 +19,21 @@ public class Electrodomesticos {
 
 	}
 
-	public Electrodomesticos(int precioBase, int peso) {
+	public Electrodomesticos(double precioBase, int peso) {
 		this.precioBase = precioBase;
 		this.peso = peso;
 		this.color = COLOR;
 		this.consumo = CONSUMO;
 	}
 
-	public Electrodomesticos(int precioBase, int peso, char consumo, String color) {
+	public Electrodomesticos(double precioBase, int peso, char consumo, String color) {
 		this.precioBase = precioBase;
 		this.peso = peso;
 		this.consumo = consumo;
 		this.color = color;
 	}
 
-	public int getPrecioBase() {
+	public double getPrecioBase() {
 		return precioBase;
 	}
 
@@ -48,63 +49,87 @@ public class Electrodomesticos {
 		return color;
 	}
 
-	public char comprobarConsumoEnergetico(char letra) {
-		if (!Character.toString(letra).matches("[a-f]")) {
-			letra = CONSUMO;
-			return letra;
-		} else
-			return letra;
+	public void comprobarConsumoEnergetico(char letra) {
+		switch (letra) {
+		case 'a':
+		case 'A':
+			this.consumo = letra;
+			break;
+		case 'b':
+		case 'B':
+			this.consumo = letra;
+			break;
+		case 'c':
+		case 'C':
+			this.consumo = letra;
+			break;
+		case 'd':
+		case 'D':
+			this.consumo = letra;
+			break;
+		case 'e':
+		case 'E':
+			this.consumo = letra;
+			break;
+		default: 
+			this.consumo = CONSUMO;
+			break;
+		}
 	}
 
-	public String comprobarColor(String color) {
+	public void comprobarColor(String color) {
 		if (color.equalsIgnoreCase("blanco") || color.equalsIgnoreCase("gris") || color.equalsIgnoreCase("negro")
 				|| color.equalsIgnoreCase("rojo") || color.equalsIgnoreCase("azul")) {
-			return color;
+			this.color = color;
 		} else
-			color = COLOR;
-		return color;
+			this.color= COLOR;
 	}
 
-	public int precioFinal() {
-		int precio =0;
+	public double precioFinal() {
+		double devolver  = precioBase;
 		switch (consumo) {
+		case 'a':
 		case 'A':
-			precio += 100;
+			devolver += 100;
 			break;
+		case 'b':
 		case 'B':
-			precio += 80;
+			devolver += 80;
 			break;
+		case 'c':
 		case 'C':
-			precio += 60;
+			devolver += 60;
 			break;
+		case 'd':
 		case 'D':
-			precio += 50;
+			devolver += 50;
 			break;
+		case 'e':
 		case 'E':
-			precio += 30;
+			devolver += 30;
 			break;
 		case 'F':
-			precio += 10;
+			devolver+= 10;
 			break;
 		default:
 			break;
 		}
 		switch ((peso >= 0 && peso <= 19) ? 0 : (peso >= 20 && peso <= 49) ? 1 : (peso >= 50 && peso <= 79) ? 2 : 3) {
 		case 0:
-			precio += 10;
+			devolver += 10;
 			break;
 		case 1:
-			precio +=50;
+			devolver +=50;
 			break;
 		case 2:
-			precio +=80;
+			devolver +=80;
 			break;
 		case 3:
-			precio +=100;
+			devolver +=100;
 			break;
 		default:
 			break;
 		}
-		return precioBase+ precio;
+		return devolver;
 	}
 }
