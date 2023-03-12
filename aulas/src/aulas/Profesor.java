@@ -18,5 +18,17 @@ public class Profesor extends Persona{
 	public String getMateria() {
 		return materia;
 	}
-	
+	public boolean faltaClase() {
+		boolean posibilidades = true;
+		int num = (int) (Math.random() * 100);
+		if(num<0||num>100) {
+			System.exit(0);
+		}
+		if (num >= 0 && num <= 20) {
+			posibilidades = false;
+		} else if (num > 20 && num <= 100) {
+			posibilidades = true;
+		}
+		return posibilidades;
+	}
 }
