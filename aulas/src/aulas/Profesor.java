@@ -1,6 +1,6 @@
 package aulas;
 
-public class Profesor extends Persona{
+public class Profesor extends Persona {
 	private String materia;
 
 	public Profesor(String nombre, int edad, char sexo, String materia) {
@@ -8,27 +8,32 @@ public class Profesor extends Persona{
 		comprobarMateria(materia);
 		// TODO Auto-generated constructor stub
 	}
+
 	public void comprobarMateria(String materia) {
-		if(!materia.equalsIgnoreCase("matematicas")&&!materia.equalsIgnoreCase("Filosofia")&&!materia.equalsIgnoreCase("Fisica")) {
-			System.err.println("Asignatura invalida");
-			System.exit(0);
+		if (!materia.equalsIgnoreCase("matematicas") && !materia.equalsIgnoreCase("Filosofia")
+				&& !materia.equalsIgnoreCase("Fisica")) {
+			this.materia = "Matematicas";
 		}
 		this.materia = materia;
 	}
+
 	public String getMateria() {
 		return materia;
 	}
-	public boolean faltaClase() {
-		boolean posibilidades = true;
+
+	public boolean asistir() {
 		int num = (int) (Math.random() * 100);
-		if(num<0||num>100) {
-			System.exit(0);
+		if (num <= 20) {
+			setEsta(false);
+			return false;
 		}
-		if (num >= 0 && num <= 20) {
-			posibilidades = false;
-		} else if (num > 20 && num <= 100) {
-			posibilidades = true;
-		}
-		return posibilidades;
+		setEsta(true);
+		return true;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"Profesor [materia=" + materia + "]";
+	}
+	
 }

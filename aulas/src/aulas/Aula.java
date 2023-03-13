@@ -1,37 +1,67 @@
 package aulas;
 
 public class Aula {
-	private int codClase;
-	private int maximo;
+	private static int id = 1;
+	private int ident;
 	private String asignatura;
-	
-	public Aula(int codClase, int maximo, String asignatura) {
-		this.codClase = codClase;
-		this.maximo = maximo;
-		this.asignatura = asignatura;
-	}
-	
-	public int getCodClase() {
-		return codClase;
-	}
+	private Profesor p1;
+	private Estudiante[] mesas;
 
-	public int getMaximo() {
-		return maximo;
-	}
-
-	public String getAsignatura() {
-		return asignatura;
+	public Aula(String asignatura) {
+		ident = id;
+		id++;
+		comprobarAsignatura(asignatura);
+		mesas = new Estudiante[10];
+		p1 = null;
 	}
 
 	public void comprobarAsignatura(String asignatura) {
-		if(!asignatura.equalsIgnoreCase("matematicas")&&!asignatura.equalsIgnoreCase("Filosofia")&&!asignatura.equalsIgnoreCase("Fisica")) {
-			System.err.println("Asignatura invalida");
-			System.exit(0);
+		if (!asignatura.equalsIgnoreCase("matematicas") && !asignatura.equalsIgnoreCase("Filosofia")
+				&& !asignatura.equalsIgnoreCase("Fisica")) {
+			this.asignatura = "matematicas";
 		}
 		this.asignatura = asignatura;
 	}
+
+	public void aniadirProfesor(Profesor p) {
+		if (p1 == null) {
+			p1 = p;
+		} else
+			System.out.println("Ya hay profesor");
+	}
+
+	public void aniadirAlumno(Estudiante e) {
+		for (int i = 0; i < mesas.length; i++) {
+			if (mesas[i] == null) {
+				mesas[i] = e;
+				return;
+			}
+		}
+		System.out.println("No hay mas espacio");
+	}
+
 	public boolean darClase() {
-		l
-		return true;
+		if (p1 == null) {
+			return false;
+		}
+		if (!asignatura.equalsIgnoreCase(p1.getMateria())) {
+			return false;
+		}
+		if (!p1.asistir()) {
+			return false;
+		}
+		int asistencia = 0;
+		for (int i = 0; i < mesas.length; i++) {
+			if (mesas[i] == null) {
+				continue;
+			}
+			if (mesas[i].asistir()) {
+				asistencia++;
+			}
+		}
+		if (asistencia >= mesas.length / 2) {
+			return true;
+		}
+		return false;
 	}
 }
