@@ -34,6 +34,7 @@ public class Aula {
 		for (int i = 0; i < mesas.length; i++) {
 			if (mesas[i] == null) {
 				mesas[i] = e;
+				mesas[i].asistir();
 				return;
 			}
 		}
@@ -63,5 +64,26 @@ public class Aula {
 			return true;
 		}
 		return false;
+	}
+
+	public void mostrarAprobados() {
+		int chico = 0;
+		int chica = 0;
+		if (!darClase()) {
+			System.out.println("No se puede dar clase");
+		}
+		for (int i = 0; i < mesas.length; i++) {
+			if (mesas == null) {
+				continue;
+			}
+			if ('F' == mesas[i].getSexo() && mesas[i].getNota() >= 5) {
+				chica++;
+			}
+			if ('M' == mesas[i].getSexo() && mesas[i].getNota() >= 5) {
+				chico++;
+			}
+		}
+		System.out.println("El total de chicas aprobadas es: " + chica);
+		System.out.println("El total de chicos aprobados es: " + chico);
 	}
 }
