@@ -22,11 +22,12 @@ public class Comercial extends Persona{
 	}
 
 
-	@Override
-	public void plus() {
+	public void plus(Comercial c) {
 		if(c.getEdad() > 30 && comision >200) {
 			double salario = c.getSalario() + comision +c.getPlus();
 			c.setSalario(salario);
 		}else c.setSalario(getSalario()+comision);
 	}
+
+	
 }

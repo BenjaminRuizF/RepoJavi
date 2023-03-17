@@ -1,6 +1,6 @@
 package empleados;
 
-public abstract class Persona {
+public class Persona {
 	private String Nombre;
 	private int Edad;
 	private double Salario;
@@ -35,7 +35,7 @@ public abstract class Persona {
 	public String toString() {
 		return "Persona [Nombre=" + Nombre + ", Edad=" + Edad + ", Salario=" + Salario + "]";
 	}
-	public abstract void plus();
+
 
 	
 }

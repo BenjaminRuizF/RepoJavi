@@ -26,9 +26,5 @@ public class Repartidor extends Persona{
 		}
 	}
 
-	@Override
-	public void plus() {
-		// TODO Auto-generated method stub
-		
-	}
+
 }
