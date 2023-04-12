@@ -18,15 +18,16 @@ public class Comercial extends Persona{
 
 	@Override
 	public String toString() {
-		return super.toString()+"Comercial [comision=" + comision + "]";
+		return super.toString()+" Soy Comercial [comision=" + comision + "]";
 	}
 
 
-	public void plus(Comercial c) {
-		if(c.getEdad() > 30 && comision >200) {
-			double salario = c.getSalario() + comision +c.getPlus();
-			c.setSalario(salario);
-		}else c.setSalario(getSalario()+comision);
+	public boolean plus() {
+		if(getEdad() > 30 && comision >200) {
+			setSalario(getSalario() + comision +getPlus());
+			return true;
+		}else setSalario(getSalario()+comision);
+			return false;
 	}
 
 	

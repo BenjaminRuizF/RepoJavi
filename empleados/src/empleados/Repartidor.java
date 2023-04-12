@@ -18,13 +18,17 @@ public class Repartidor extends Persona{
 
 	@Override
 	public String toString() {
-		return super.toString()+"Repartidor [zona=" + zona + "]";
+		return super.toString()+" Soy Repartidor [zona=" + zona + "]";
 	}
-	public void plus(Repartidor r) {
-		if(r.getEdad()<25&&r.getZona().equalsIgnoreCase("zona 3")) {
-			r.setSalario(getSalario()+r.getPlus());
+	public boolean plus() {
+		if(getEdad()<25&&"zona 3".equalsIgnoreCase(getZona())) {
+			setSalario(getSalario()+getPlus());
+			return true;
 		}
+		return false;
 	}
+
+	
 
 
 }

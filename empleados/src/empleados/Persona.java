@@ -1,6 +1,6 @@
 package empleados;
 
-public class Persona {
+public abstract class Persona {
 	private String Nombre;
 	private int Edad;
 	private double Salario;
@@ -12,9 +12,6 @@ public class Persona {
 	}
 	public String getNombre() {
 		return Nombre;
-	}
-	public void setNombre(String nombre) {
-		Nombre = nombre;
 	}
 	public int getEdad() {
 		return Edad;
@@ -31,6 +28,7 @@ public class Persona {
 	public void setSalario(double salario) {
 		Salario = salario;
 	}
+	public abstract boolean plus();
 	@Override
 	public String toString() {
 		return "Persona [Nombre=" + Nombre + ", Edad=" + Edad + ", Salario=" + Salario + "]";
