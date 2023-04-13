@@ -21,15 +21,24 @@ public class Masajista extends SeleccionFutbol implements IntegranteSeleccionFut
 		this.aniosExperiencia = aniosExperiencia;
 	}
 	public void concentrarse() {
+		System.out.println("El masajista se esta concentrando");
 	}
 	public void viajar() {
+		System.out.println("El masajista esta viajando");
 	}
 	public void entrenar() {
+		System.out.println("El masajista esta viendo el entrenamiento");
 	}
 	public void jugarPartido() {
+		System.out.println("El masajista esta preparado para salir a asistir a un jugador");
 	}
 	public void darMasaje() {
-		
+		System.out.println("El masajista esta dando un masaje");
 	}
+	@Override
+	public String toString() {
+		return "Masajista  "+ super.toString()+"  [titulacion=" + titulacion + ", aniosExperiencia=" + aniosExperiencia + "]";
+	}
+	
 	
 }

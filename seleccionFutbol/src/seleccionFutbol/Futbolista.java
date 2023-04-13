@@ -22,14 +22,23 @@ public class Futbolista extends SeleccionFutbol implements IntegranteSeleccionFu
 	}
 	
 	public void concentrarse() {
+		System.out.println("El jugador se esta concentrando");
 	}
 	public void viajar() {
+		System.out.println("El jugador esta viajando");
 	}
 	public void entrenar() {
+		System.out.println("El jugador esta entrenando");
 	}
 	public void jugarPartido() {
+		System.out.println("El jugador esta jugando el partido");
 	}
 	public void entrevista() {
-		
+		System.out.println("El jugador esta en una entrevista");
 	}
+	@Override
+	public String toString() {
+		return "Futbolista "+ super.toString()+" [dorsal=" + dorsal + ", demarcacion=" + demarcacion + "]";
+	}
+	
 }
