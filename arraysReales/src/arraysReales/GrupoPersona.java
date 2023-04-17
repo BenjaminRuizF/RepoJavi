@@ -1,11 +1,16 @@
 package arraysReales;
 
 public class GrupoPersona implements Estadisticas {
-	Persona[] array = new Persona[5];
+	private Persona[] array;
 	private final double MINIMO = Double.MIN_VALUE;
 	private final double MAXIMO = Double.MAX_VALUE;
-	public GrupoPersona(Persona[] array) {
-		this.array = array;
+	public GrupoPersona() {
+		this.array = new Persona[5];
+		array[0] = new Persona(2000, "Paco");
+		array[1] = new Persona(2500, "Pedro");
+		array[2] = new Persona(1200, "Maria");
+		array[3] = new Persona(1800, "Antonio");
+		array[4] = new Persona(1450.5, "David");
 	}
 
 	@Override

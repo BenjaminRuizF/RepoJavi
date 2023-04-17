@@ -8,8 +8,11 @@ public class ArraysReales implements Estadisticas{
 	private final double MINIMO = Double.MIN_VALUE;
 	private final double MAXIMO = Double.MAX_VALUE;
 	
-	public ArraysReales(double[] array) {
-		this.array = array;
+	public ArraysReales() {
+		this.array = new double[5];
+		for (int i = 0; i < array.length; i++) {
+			array[i]=Math.random()*10;
+		}
 	}
 
 	@Override
